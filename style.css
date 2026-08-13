@@ -1,6 +1,5 @@
-```css
 /* =========================
-   GENERAL STYLES
+   GENERAL
 ========================= */
 
 * {
@@ -12,13 +11,9 @@
 html {
     scroll-behavior: smooth;
     width: 100%;
-    min-height: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-
     width: 100%;
     min-height: 100vh;
 
@@ -30,32 +25,13 @@ body {
     overflow-x: hidden;
 }
 
-
-/* KEEP EVERYTHING INSIDE THE SCREEN */
-
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-main,
-section,
-header,
-footer {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-
-/* FORM ELEMENTS */
-
+img,
 input,
 select,
 textarea,
 button {
-    box-sizing: border-box;
     max-width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -91,13 +67,21 @@ button {
     background-repeat: no-repeat;
 }
 
+
+/* =========================
+   HERO GLOW
+========================= */
+
 .hero::before {
     content: "";
 
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 80vw;
+    height: 80vw;
+
+    max-width: 500px;
+    max-height: 500px;
 
     border-radius: 50%;
 
@@ -113,12 +97,20 @@ button {
     pointer-events: none;
 }
 
+
+/* =========================
+   HERO CONTENT
+========================= */
+
 .hero-content {
     position: relative;
 
     z-index: 2;
 
+    width: 100%;
     max-width: 900px;
+
+    margin: 0 auto;
 }
 
 
@@ -140,6 +132,8 @@ button {
 }
 
 .hero h1 {
+    width: 100%;
+
     font-size: clamp(4rem, 10vw, 8rem);
 
     line-height: 0.95;
@@ -172,6 +166,7 @@ button {
 }
 
 .hero .intro {
+    width: 100%;
     max-width: 550px;
 
     margin: 0 auto 35px;
@@ -222,13 +217,14 @@ button {
 ========================= */
 
 .details {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
     padding: 100px 20px;
 
     text-align: center;
-
-    max-width: 1100px;
-
-    margin: auto;
 }
 
 .details h2,
@@ -236,10 +232,13 @@ button {
 .rsvp h2 {
     font-size: clamp(2rem, 5vw, 3.5rem);
 
+    line-height: 1.1;
+
     margin-bottom: 20px;
 }
 
 .details > p:not(.section-label) {
+    width: 100%;
     max-width: 650px;
 
     margin: 0 auto 50px;
@@ -253,14 +252,19 @@ button {
 ========================= */
 
 .event-details {
+    width: 100%;
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 25px;
 }
 
 .detail-card {
+    width: 100%;
+    min-width: 0;
+
     background: #151515;
 
     border: 1px solid #2b2b2b;
@@ -290,6 +294,8 @@ button {
 
 .detail-card p {
     color: #cccccc;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -298,15 +304,18 @@ button {
 ========================= */
 
 .message {
+    width: 100%;
+
     background: #151515;
 
     padding: 100px 20px;
 }
 
 .message-content {
+    width: 100%;
     max-width: 800px;
 
-    margin: auto;
+    margin: 0 auto;
 
     text-align: center;
 }
@@ -323,6 +332,8 @@ button {
 ========================= */
 
 .rsvp {
+    width: 100%;
+
     padding: 100px 20px;
 
     text-align: center;
@@ -334,7 +345,13 @@ button {
     margin-bottom: 40px;
 }
 
+
+/* =========================
+   RSVP FORM
+========================= */
+
 .rsvp-form {
+    width: 100%;
     max-width: 600px;
 
     margin: 0 auto;
@@ -343,6 +360,8 @@ button {
 }
 
 .form-group {
+    width: 100%;
+
     margin-bottom: 25px;
 }
 
@@ -359,7 +378,11 @@ button {
 .form-group input,
 .form-group select,
 .form-group textarea {
+    display: block;
+
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
     padding: 14px 16px;
 
@@ -415,6 +438,8 @@ button {
 ========================= */
 
 .success-message {
+    width: 100%;
+
     text-align: center;
 
     padding: 50px 30px;
@@ -458,6 +483,7 @@ button {
 ========================= */
 
 @keyframes fadeUp {
+
     from {
         opacity: 0;
 
@@ -477,6 +503,8 @@ button {
 ========================= */
 
 footer {
+    width: 100%;
+
     padding: 35px 20px;
 
     text-align: center;
@@ -494,57 +522,58 @@ footer p:first-child {
 
 
 /* =========================
-   MOBILE DESIGN
+   MOBILE / IPHONE
 ========================= */
 
 @media (max-width: 700px) {
 
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    main {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    * {
-        max-width: 100%;
-    }
-
-
     /* HERO */
 
     .hero {
-        min-height: 100svh;
         width: 100%;
+        min-height: 100svh;
+
         padding: 30px 20px;
     }
 
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .hero h1 {
-        font-size: clamp(3.2rem, 15vw, 4.5rem);
+        width: 100%;
+
+        font-size: clamp(3rem, 15vw, 4.5rem);
+
         letter-spacing: -2px;
+
         line-height: 0.95;
+
+        overflow-wrap: break-word;
     }
 
     .small-heading,
     .section-label {
         font-size: 0.7rem;
+
         letter-spacing: 3px;
     }
 
     .hero-subtitle {
         font-size: 0.7rem;
+
         letter-spacing: 3px;
+
+        overflow-wrap: break-word;
     }
 
     .hero .intro {
+        width: 100%;
+
         font-size: 0.95rem;
-        max-width: 90%;
+
+        max-width: 500px;
     }
 
 
@@ -552,31 +581,46 @@ footer p:first-child {
 
     .details {
         width: 100%;
+
         padding: 70px 20px;
     }
 
     .details h2,
     .message h2,
     .rsvp h2 {
+        width: 100%;
+
         font-size: 2.2rem;
+
         line-height: 1.1;
+
+        overflow-wrap: break-word;
     }
 
     .details > p:not(.section-label) {
+        width: 100%;
+
         font-size: 0.95rem;
+
         margin-bottom: 35px;
+
+        overflow-wrap: break-word;
     }
 
 
     /* EVENT CARDS */
 
     .event-details {
+        width: 100%;
+
         grid-template-columns: 1fr;
+
         gap: 18px;
     }
 
     .detail-card {
         width: 100%;
+
         padding: 28px 18px;
     }
 
@@ -585,6 +629,7 @@ footer p:first-child {
 
     .message {
         width: 100%;
+
         padding: 70px 20px;
     }
 
@@ -594,51 +639,49 @@ footer p:first-child {
 
     .message-content p:not(.section-label) {
         font-size: 0.95rem;
+
+        overflow-wrap: break-word;
     }
 
 
-   /* RSVP */
+    /* RSVP */
 
-.rsvp {
-    width: 100%;
-    max-width: 100%;
-    padding: 70px 20px;
-    overflow-x: hidden;
-}
+    .rsvp {
+        width: 100%;
 
-.rsvp-form {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
+        padding: 70px 20px;
+    }
 
-.form-group {
-    width: 100%;
-    max-width: 100%;
-}
+    .rsvp-form {
+        width: 100%;
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    font-size: 16px;
-    padding: 13px 14px;
-}
+        max-width: 600px;
+    }
 
-.rsvp-form .button {
-    max-width: 100%;
-}
+    .form-group {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        font-size: 16px;
+
+        padding: 13px 14px;
+    }
 
 
     /* BUTTON */
 
     .button {
+        max-width: 100%;
+
         padding: 13px 25px;
+
         font-size: 0.95rem;
     }
 
@@ -647,11 +690,14 @@ footer p:first-child {
 
     .success-message {
         width: 100%;
+
         padding: 40px 20px;
     }
 
     .success-message h3 {
         font-size: 1.8rem;
+
+        overflow-wrap: break-word;
     }
 
 
@@ -659,8 +705,11 @@ footer p:first-child {
 
     footer {
         width: 100%;
+
         padding: 30px 20px;
+
         font-size: 0.8rem;
+
+        overflow-wrap: break-word;
     }
 }
-```
