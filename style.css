@@ -712,4 +712,42 @@ footer p:first-child {
 
         overflow-wrap: break-word;
     }
+   /* =========================
+   SAFARI / IPHONE FIX
+========================= */
+
+@supports (-webkit-touch-callout: none) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .rsvp {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .rsvp-form {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+}
 }
