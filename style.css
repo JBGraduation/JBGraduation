@@ -31,6 +31,34 @@ body {
 }
 
 
+/* KEEP EVERYTHING INSIDE THE SCREEN */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main,
+section,
+header,
+footer {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* FORM ELEMENTS */
+
+input,
+select,
+textarea,
+button {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -471,6 +499,24 @@ footer p:first-child {
 
 @media (max-width: 700px) {
 
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+
     /* HERO */
 
     .hero {
@@ -551,25 +597,42 @@ footer p:first-child {
     }
 
 
-    /* RSVP */
+   /* RSVP */
 
-    .rsvp {
-        width: 100%;
-        padding: 70px 20px;
-    }
+.rsvp {
+    width: 100%;
+    max-width: 100%;
+    padding: 70px 20px;
+    overflow-x: hidden;
+}
 
-    .rsvp-form {
-        width: 100%;
-        max-width: 100%;
-    }
+.rsvp-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        font-size: 16px;
-        padding: 13px 14px;
-    }
+.form-group {
+    width: 100%;
+    max-width: 100%;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 16px;
+    padding: 13px 14px;
+}
+
+.rsvp-form .button {
+    max-width: 100%;
+}
 
 
     /* BUTTON */
