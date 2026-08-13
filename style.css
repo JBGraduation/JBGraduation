@@ -33,7 +33,7 @@ body {
 
 /* =========================
    HERO SECTION
-======================== */
+========================= */
 
 .hero {
     position: relative;
@@ -471,42 +471,133 @@ footer p:first-child {
 
 @media (max-width: 700px) {
 
+    /* HERO */
+
     .hero {
         min-height: 100svh;
         width: 100%;
+        padding: 30px 20px;
     }
 
     .hero h1 {
-        font-size: 4rem;
-
+        font-size: clamp(3.2rem, 15vw, 4.5rem);
         letter-spacing: -2px;
+        line-height: 0.95;
+    }
+
+    .small-heading,
+    .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
     }
 
     .hero-subtitle {
-        font-size: 0.75rem;
-
-        letter-spacing: 4px;
+        font-size: 0.7rem;
+        letter-spacing: 3px;
     }
 
     .hero .intro {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        max-width: 90%;
     }
+
+
+    /* DETAILS */
+
+    .details {
+        width: 100%;
+        padding: 70px 20px;
+    }
+
+    .details h2,
+    .message h2,
+    .rsvp h2 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+
+    .details > p:not(.section-label) {
+        font-size: 0.95rem;
+        margin-bottom: 35px;
+    }
+
+
+    /* EVENT CARDS */
 
     .event-details {
         grid-template-columns: 1fr;
+        gap: 18px;
     }
 
-    .details,
-    .message,
+    .detail-card {
+        width: 100%;
+        padding: 28px 18px;
+    }
+
+
+    /* MESSAGE */
+
+    .message {
+        width: 100%;
+        padding: 70px 20px;
+    }
+
+    .message-content {
+        width: 100%;
+    }
+
+    .message-content p:not(.section-label) {
+        font-size: 0.95rem;
+    }
+
+
+    /* RSVP */
+
     .rsvp {
+        width: 100%;
         padding: 70px 20px;
     }
 
     .rsvp-form {
         width: 100%;
+        max-width: 100%;
     }
-    .hero {
-    background-image: url("jbimages/background.jpeg") !important;
-}
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        font-size: 16px;
+        padding: 13px 14px;
+    }
+
+
+    /* BUTTON */
+
+    .button {
+        padding: 13px 25px;
+        font-size: 0.95rem;
+    }
+
+
+    /* SUCCESS MESSAGE */
+
+    .success-message {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .success-message h3 {
+        font-size: 1.8rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        width: 100%;
+        padding: 30px 20px;
+        font-size: 0.8rem;
+    }
 }
 ```
