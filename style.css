@@ -1,6 +1,6 @@
-/* =========================
+/* =========================================================
    GENERAL
-========================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -11,11 +11,15 @@
 html {
     scroll-behavior: smooth;
     width: 100%;
+    max-width: 100%;
 }
 
 body {
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 
     font-family: Arial, Helvetica, sans-serif;
     background: #0b0b0b;
@@ -25,24 +29,32 @@ body {
     overflow-x: hidden;
 }
 
+/* Prevent anything from creating extra width */
+
 img,
+video,
+iframe {
+    max-width: 100%;
+}
+
 input,
 select,
 textarea,
 button {
-    max-width: 100%;
+    font-family: inherit;
     box-sizing: border-box;
 }
 
 
-/* =========================
-   HERO SECTION
-========================= */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
     position: relative;
 
     width: 100%;
+    min-height: 100vh;
     min-height: 100svh;
 
     display: flex;
@@ -67,21 +79,16 @@ button {
     background-repeat: no-repeat;
 }
 
-
-/* =========================
-   HERO GLOW
-========================= */
-
 .hero::before {
     content: "";
 
     position: absolute;
 
-    width: 80vw;
-    height: 80vw;
+    width: 500px;
+    height: 500px;
 
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 90vw;
+    max-height: 90vw;
 
     border-radius: 50%;
 
@@ -97,11 +104,6 @@ button {
     pointer-events: none;
 }
 
-
-/* =========================
-   HERO CONTENT
-========================= */
-
 .hero-content {
     position: relative;
 
@@ -114,9 +116,9 @@ button {
 }
 
 
-/* =========================
+/* =========================================================
    HERO TEXT
-========================= */
+========================================================= */
 
 .small-heading,
 .section-label {
@@ -143,6 +145,8 @@ button {
     letter-spacing: -4px;
 
     font-weight: 700;
+
+    overflow-wrap: break-word;
 }
 
 .hero h1 span {
@@ -154,6 +158,8 @@ button {
 }
 
 .hero-subtitle {
+    width: 100%;
+
     font-size: 1rem;
 
     letter-spacing: 7px;
@@ -163,6 +169,8 @@ button {
     font-weight: bold;
 
     margin-bottom: 25px;
+
+    overflow-wrap: break-word;
 }
 
 .hero .intro {
@@ -179,12 +187,14 @@ button {
 }
 
 
-/* =========================
+/* =========================================================
    BUTTON
-========================= */
+========================================================= */
 
 .button {
     display: inline-block;
+
+    max-width: 100%;
 
     padding: 14px 30px;
 
@@ -212,9 +222,9 @@ button {
 }
 
 
-/* =========================
-   DETAILS SECTION
-========================= */
+/* =========================================================
+   DETAILS
+========================================================= */
 
 .details {
     width: 100%;
@@ -230,11 +240,15 @@ button {
 .details h2,
 .message h2,
 .rsvp h2 {
+    width: 100%;
+
     font-size: clamp(2rem, 5vw, 3.5rem);
 
     line-height: 1.1;
 
     margin-bottom: 20px;
+
+    overflow-wrap: break-word;
 }
 
 .details > p:not(.section-label) {
@@ -244,12 +258,14 @@ button {
     margin: 0 auto 50px;
 
     color: #bbbbbb;
+
+    overflow-wrap: break-word;
 }
 
 
-/* =========================
+/* =========================================================
    EVENT CARDS
-========================= */
+========================================================= */
 
 .event-details {
     width: 100%;
@@ -274,6 +290,8 @@ button {
     border-radius: 15px;
 
     transition: 0.3s ease;
+
+    overflow: hidden;
 }
 
 .detail-card:hover {
@@ -299,9 +317,9 @@ button {
 }
 
 
-/* =========================
-   MESSAGE SECTION
-========================= */
+/* =========================================================
+   MESSAGE
+========================================================= */
 
 .message {
     width: 100%;
@@ -309,6 +327,8 @@ button {
     background: #151515;
 
     padding: 100px 20px;
+
+    overflow: hidden;
 }
 
 .message-content {
@@ -324,12 +344,14 @@ button {
     color: #cccccc;
 
     margin-bottom: 20px;
+
+    overflow-wrap: break-word;
 }
 
 
-/* =========================
-   RSVP SECTION
-========================= */
+/* =========================================================
+   RSVP
+========================================================= */
 
 .rsvp {
     width: 100%;
@@ -337,6 +359,8 @@ button {
     padding: 100px 20px;
 
     text-align: center;
+
+    overflow: hidden;
 }
 
 .rsvp-intro {
@@ -346,9 +370,9 @@ button {
 }
 
 
-/* =========================
+/* =========================================================
    RSVP FORM
-========================= */
+========================================================= */
 
 .rsvp-form {
     width: 100%;
@@ -368,6 +392,8 @@ button {
 .form-group label {
     display: block;
 
+    width: 100%;
+
     color: #d4af37;
 
     font-weight: bold;
@@ -381,6 +407,7 @@ button {
     display: block;
 
     width: 100%;
+
     max-width: 100%;
     min-width: 0;
 
@@ -433,12 +460,13 @@ button {
 }
 
 
-/* =========================
-   RSVP SUCCESS MESSAGE
-========================= */
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
 
 .success-message {
     width: 100%;
+    max-width: 100%;
 
     text-align: center;
 
@@ -453,6 +481,8 @@ button {
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
 
     animation: fadeUp 0.6s ease forwards;
+
+    overflow: hidden;
 }
 
 .success-icon {
@@ -467,6 +497,8 @@ button {
     font-size: 2.2rem;
 
     margin-bottom: 15px;
+
+    overflow-wrap: break-word;
 }
 
 .success-message p {
@@ -475,12 +507,14 @@ button {
     margin-bottom: 8px;
 
     font-size: 1rem;
+
+    overflow-wrap: break-word;
 }
 
 
-/* =========================
+/* =========================================================
    ANIMATION
-========================= */
+========================================================= */
 
 @keyframes fadeUp {
 
@@ -498,9 +532,9 @@ button {
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
     width: 100%;
@@ -514,6 +548,8 @@ footer {
     color: #777;
 
     font-size: 0.9rem;
+
+    overflow: hidden;
 }
 
 footer p:first-child {
@@ -521,16 +557,34 @@ footer p:first-child {
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE / IPHONE
-========================= */
+========================================================= */
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
 
-    /* HERO */
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
         width: 100%;
+        max-width: 100%;
+
+        min-height: 100vh;
         min-height: 100svh;
 
         padding: 30px 20px;
@@ -539,6 +593,8 @@ footer p:first-child {
     .hero-content {
         width: 100%;
         max-width: 100%;
+
+        overflow: hidden;
     }
 
     .hero h1 {
@@ -551,6 +607,7 @@ footer p:first-child {
         line-height: 0.95;
 
         overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
     .small-heading,
@@ -558,31 +615,45 @@ footer p:first-child {
         font-size: 0.7rem;
 
         letter-spacing: 3px;
+
+        max-width: 100%;
+
+        overflow-wrap: break-word;
     }
 
     .hero-subtitle {
+        width: 100%;
+
         font-size: 0.7rem;
 
         letter-spacing: 3px;
 
         overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
     .hero .intro {
         width: 100%;
 
+        max-width: 100%;
+
         font-size: 0.95rem;
 
-        max-width: 500px;
+        padding: 0 5px;
     }
 
 
-    /* DETAILS */
+    /* =========================
+       DETAILS
+    ========================= */
 
     .details {
         width: 100%;
+        max-width: 100%;
 
         padding: 70px 20px;
+
+        overflow: hidden;
     }
 
     .details h2,
@@ -595,6 +666,7 @@ footer p:first-child {
         line-height: 1.1;
 
         overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
     .details > p:not(.section-label) {
@@ -605,66 +677,107 @@ footer p:first-child {
         margin-bottom: 35px;
 
         overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
 
-    /* EVENT CARDS */
+    /* =========================
+       EVENT CARDS
+    ========================= */
 
     .event-details {
         width: 100%;
+        max-width: 100%;
 
-        grid-template-columns: 1fr;
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr);
 
         gap: 18px;
     }
 
     .detail-card {
         width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
 
         padding: 28px 18px;
+
+        overflow: hidden;
     }
 
 
-    /* MESSAGE */
+    /* =========================
+       MESSAGE
+    ========================= */
 
     .message {
         width: 100%;
+        max-width: 100%;
 
         padding: 70px 20px;
+
+        overflow: hidden;
     }
 
     .message-content {
         width: 100%;
+        max-width: 100%;
+
+        overflow: hidden;
     }
 
     .message-content p:not(.section-label) {
+        width: 100%;
+
         font-size: 0.95rem;
 
         overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
 
-    /* RSVP */
+    /* =========================
+       RSVP
+    ========================= */
 
     .rsvp {
         width: 100%;
+        max-width: 100%;
 
         padding: 70px 20px;
+
+        overflow: hidden;
     }
 
     .rsvp-form {
         width: 100%;
+        max-width: 100%;
 
-        max-width: 600px;
+        margin: 0;
+
+        padding: 0;
     }
 
     .form-group {
         width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+    .form-group label {
+        width: 100%;
+
+        overflow-wrap: break-word;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
+        display: block;
+
         width: 100%;
         max-width: 100%;
         min-width: 0;
@@ -672,10 +785,26 @@ footer p:first-child {
         font-size: 16px;
 
         padding: 13px 14px;
+
+        /* Important for iPhone Safari */
+
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .rsvp-form .button {
+        max-width: 100%;
     }
 
 
-    /* BUTTON */
+    /* =========================
+       BUTTON
+    ========================= */
 
     .button {
         max-width: 100%;
@@ -686,35 +815,54 @@ footer p:first-child {
     }
 
 
-    /* SUCCESS MESSAGE */
+    /* =========================
+       SUCCESS MESSAGE
+    ========================= */
 
     .success-message {
         width: 100%;
+        max-width: 100%;
 
         padding: 40px 20px;
+
+        overflow: hidden;
     }
 
     .success-message h3 {
         font-size: 1.8rem;
 
         overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
         width: 100%;
+        max-width: 100%;
 
         padding: 30px 20px;
 
         font-size: 0.8rem;
 
-        overflow-wrap: break-word;
+        overflow: hidden;
     }
-   /* =========================
-   SAFARI / IPHONE FIX
-========================= */
+
+    footer p {
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+}
+
+
+/* =========================================================
+   SAFARI / IOS
+========================================================= */
 
 @supports (-webkit-touch-callout: none) {
 
@@ -722,23 +870,40 @@ footer p:first-child {
     body {
         width: 100%;
         max-width: 100%;
+
         overflow-x: hidden;
     }
 
     .hero {
         width: 100%;
-        min-height: 100vh;
+        max-width: 100%;
+
+        min-height: -webkit-fill-available;
         min-height: 100svh;
+
+        overflow: hidden;
     }
 
-    .rsvp {
+    .details,
+    .message,
+    .rsvp,
+    footer {
         width: 100%;
         max-width: 100%;
+
+        overflow: hidden;
     }
 
     .rsvp-form {
         width: 100%;
-        max-width: 600px;
+        max-width: 100%;
+    }
+
+    .form-group {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
     }
 
     .form-group input,
@@ -746,7 +911,11 @@ footer p:first-child {
     .form-group textarea {
         width: 100%;
         max-width: 100%;
+        min-width: 0;
+
         -webkit-appearance: none;
         appearance: none;
+
+        border-radius: 8px;
     }
 }
