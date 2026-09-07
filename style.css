@@ -1,1156 +1,1164 @@
-/* =========================
-   GENERAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
+/* ========================= 
+   GENERAL 
+========================= */ 
+ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+ 
+html { 
+    scroll-behavior: smooth; 
+    width: 100%; 
+    max-width: 100%; 
+} 
+ 
+body { 
+    width: 100%; 
+    max-width: 100%; 
+    min-height: 100vh; 
+ 
+    margin: 0; 
+    padding: 0; 
+ 
+    font-family: Arial, Helvetica, sans-serif; 
+ 
+    background: #0b0b0b; 
+ 
+    color: white; 
+ 
+    line-height: 1.6; 
+ 
+    overflow-x: hidden; 
+} 
+ 
+ 
+/* Prevent elements from creating 
+   horizontal scrolling */ 
+ 
+img, 
+input, 
+select, 
+textarea, 
+button { 
+    max-width: 100%; 
+    box-sizing: border-box; 
+} 
+ 
+ 
+/* ========================= 
+   HERO 
+========================= */ 
+ 
+.hero { 
+    position: relative; 
+ 
+    width: 100%; 
+    max-width: 100%; 
+ 
+    min-height: 100vh; 
+    min-height: 100svh; 
+ 
+    display: flex; 
+ 
+    justify-content: center; 
+    align-items: center; 
+ 
+    text-align: center; 
+ 
+    padding: 40px 20px; 
+ 
+    overflow: hidden; 
+ 
+    background: 
+        linear-gradient( 
+            rgba(0, 0, 0, 0.55), 
+            rgba(0, 0, 0, 0.55) 
+        ), 
+ 
+        url("jbimages/background.jpeg"); 
+ 
+    background-size: cover; 
+ 
+    background-position: center; 
+ 
+    background-repeat: no-repeat; 
+} 
+ 
+ 
+/* ========================= 
+   HERO GLOW 
+========================= */ 
+ 
+.hero::before { 
+ 
+    content: ""; 
+ 
+    position: absolute; 
+ 
+    width: 80vw; 
+    height: 80vw; 
+ 
+    max-width: 500px; 
+    max-height: 500px; 
+ 
+    border-radius: 50%; 
+ 
+    background: 
+        rgba(212, 175, 55, 0.08); 
+ 
+    filter: blur(100px); 
+ 
+    top: 50%; 
+    left: 50%; 
+ 
+    transform: 
+        translate(-50%, -50%); 
+ 
+    pointer-events: none; 
+} 
+ 
+ 
+/* ========================= 
+   HERO CONTENT 
+========================= */ 
+ 
+.hero-content { 
+ 
+    position: relative; 
+ 
+    z-index: 2; 
+ 
+    width: 100%; 
+    max-width: 900px; 
+ 
+    margin: 0 auto; 
+} 
+ 
+ 
+/* ========================= 
+   HERO TEXT 
+========================= */ 
+ 
+.small-heading, 
+.section-label { 
+ 
+    color: #d4af37; 
+ 
+    font-size: 0.85rem; 
+ 
+    font-weight: bold; 
+ 
+    letter-spacing: 4px; 
+ 
+    margin-bottom: 20px; 
+} 
+ 
+ 
+.hero h1 { 
+ 
+    width: 100%; 
+ 
+    font-size: 
+        clamp(4rem, 10vw, 8rem); 
+ 
+    line-height: 0.95; 
+ 
+    margin-bottom: 25px; 
+ 
+    letter-spacing: -4px; 
+ 
+    font-weight: 700; 
+} 
+ 
+ 
+.hero h1 span { 
+ 
+    color: #d4af37; 
+ 
+    font-family: Georgia, serif; 
+ 
+    font-weight: normal; 
+} 
+ 
+ 
+.hero-subtitle { 
+ 
+    font-size: 1rem; 
+ 
+    letter-spacing: 7px; 
+ 
+    color: #d4af37; 
+ 
+    font-weight: bold; 
+ 
+    margin-bottom: 25px; 
+} 
+ 
+ 
+.hero .intro { 
+ 
+    width: 100%; 
+ 
+    max-width: 550px; 
+ 
+    margin: 
+        0 auto 35px; 
+ 
+    color: #aaa; 
+ 
+    font-size: 1.1rem; 
+ 
+    font-style: italic; 
+} 
+ 
+ 
+/* ========================= 
+   BUTTON 
+========================= */ 
+ 
+.button { 
+ 
+    display: inline-block; 
+ 
+    padding: 14px 30px; 
+ 
+    background: #d4af37; 
+ 
+    color: #111; 
+ 
+    text-decoration: none; 
+ 
+    font-weight: bold; 
+ 
+    border-radius: 30px; 
+ 
+    transition: 0.3s ease; 
+ 
+    border: none; 
+ 
+    cursor: pointer; 
+ 
+    font-family: inherit; 
+} 
+ 
+ 
+.button:hover { 
+ 
+    background: white; 
+ 
+    transform: 
+        translateY(-3px); 
+} 
+ 
+ 
+/* ========================= 
+   DETAILS 
+========================= */ 
+ 
+.details { 
+ 
+    width: 100%; 
+    max-width: 1100px; 
+ 
+    margin: 0 auto; 
+ 
+    padding: 100px 20px; 
+ 
+    text-align: center; 
+} 
+ 
+ 
+.details h2, 
+.message h2, 
+.rsvp h2 { 
+ 
+    font-size: 
+        clamp(2rem, 5vw, 3.5rem); 
+ 
+    line-height: 1.1; 
+ 
+    margin-bottom: 20px; 
+} 
+ 
+ 
+.details > p:not(.section-label) { 
+ 
+    width: 100%; 
+ 
+    max-width: 650px; 
+ 
+    margin: 
+        0 auto 50px; 
+ 
+    color: #bbbbbb; 
+} 
+ 
+ 
+/* ========================= 
+   EVENT CARDS 
+========================= */ 
+ 
+.event-details { 
+ 
+    width: 100%; 
+ 
+    display: grid; 
+ 
+    grid-template-columns: 
+        repeat(3, minmax(0, 1fr)); 
+ 
+    gap: 25px; 
+} 
+ 
+ 
+.detail-card { 
+ 
+    width: 100%; 
+ 
+    min-width: 0; 
+ 
+    background: #151515; 
+ 
+    border: 
+        1px solid #2b2b2b; 
+ 
+    padding: 35px 20px; 
+ 
+    border-radius: 15px; 
+ 
+    transition: 0.3s ease; 
+} 
+ 
+ 
+.detail-card:hover { 
+ 
+    transform: 
+        translateY(-8px); 
+ 
+    border-color: 
+        #d4af37; 
+} 
+ 
+ 
+.detail-card span { 
+ 
+    font-size: 2.5rem; 
+} 
+ 
+ 
+.detail-card h3 { 
+ 
+    color: #d4af37; 
+ 
+    margin: 
+        15px 0 5px; 
+} 
+ 
+ 
+.detail-card p { 
+ 
+    color: #cccccc; 
+ 
+    overflow-wrap: 
+        break-word; 
+} 
+ 
+ 
+/* ========================= 
+   MESSAGE 
+========================= */ 
+ 
+.message { 
+ 
+    width: 100%; 
+ 
+    background: #151515; 
+ 
+    padding: 100px 20px; 
+ 
+    overflow: hidden; 
+} 
+ 
+ 
+.message-content { 
+ 
+    width: 100%; 
+ 
+    max-width: 1000px; 
+ 
+    margin: 0 auto; 
+ 
+    text-align: center; 
+} 
+ 
+ 
+.message-content p:not(.section-label) { 
+ 
+    color: #cccccc; 
+ 
+    margin-bottom: 20px; 
+ 
+    overflow-wrap: break-word; 
+} 
+ 
+ 
+/* ========================= 
+   DECORATIVE MEMORY PHOTOS 
+========================= */ 
+ 
+.memory-photos { 
+ 
+    width: 100%; 
+ 
+    max-width: 950px; 
+ 
+    margin: 
+        50px auto 55px; 
+ 
+    display: flex; 
+ 
+    justify-content: center; 
+ 
+    align-items: center; 
+ 
+    gap: 25px; 
+ 
+    position: relative; 
+} 
+ 
+ 
+/* PHOTO FRAME */ 
+ 
+.memory-photo { 
+ 
+    width: 31%; 
+ 
+    aspect-ratio: 4 / 3; 
+ 
+    padding: 8px; 
+ 
+    background: #d4af37; 
+ 
+    border-radius: 4px; 
+ 
+    overflow: hidden; 
+ 
+    position: relative; 
+ 
+    box-shadow: 
+        0 15px 35px 
+        rgba(0, 0, 0, 0.55), 
+ 
+        0 0 18px 
+        rgba(212, 175, 55, 0.15); 
+ 
+    transition: 
+        transform 0.4s ease, 
+        box-shadow 0.4s ease; 
+} 
+ 
+ 
+/* IMAGE */ 
+ 
+.memory-photo img { 
+ 
+    display: block; 
+ 
+    width: 100%; 
+ 
+    height: 100%; 
+ 
+    object-fit: cover; 
+ 
+    border-radius: 2px; 
+} 
+ 
+ 
+/* PHOTO ANGLES */ 
+ 
+.photo-one { 
+ 
+    transform: 
+        rotate(-4deg); 
+} 
+ 
+ 
+.photo-two { 
+ 
+    transform: 
+        rotate(2deg); 
+ 
+    z-index: 2; 
+} 
+ 
+ 
+.photo-three { 
+ 
+    transform: 
+        rotate(4deg); 
+} 
+ 
+ 
+/* PHOTO HOVER */ 
+ 
+.memory-photo:hover { 
+ 
+    transform: 
+        rotate(0deg) 
+        translateY(-10px) 
+        scale(1.04); 
+ 
+    z-index: 5; 
+ 
+    box-shadow: 
+        0 20px 45px 
+        rgba(0, 0, 0, 0.65), 
+ 
+        0 0 25px 
+        rgba(212, 175, 55, 0.3); 
+} 
+ 
+ 
+/* ========================= 
+   RSVP 
+========================= */ 
+ 
+.rsvp { 
+ 
+    width: 100%; 
+ 
+    padding: 100px 20px; 
+ 
+    text-align: center; 
+} 
+ 
+ 
+.rsvp-intro { 
+ 
+    color: #bbbbbb; 
+ 
+    margin-bottom: 40px; 
+} 
+ 
+ 
+.rsvp-form { 
+ 
+    width: 100%; 
+ 
+    max-width: 600px; 
+ 
+    margin: 0 auto; 
+ 
+    text-align: left; 
+} 
+ 
+ 
+.form-group { 
+ 
+    width: 100%; 
+ 
+    margin-bottom: 25px; 
+} 
+ 
+ 
+.form-group label { 
+ 
+    display: block; 
+ 
+    color: #d4af37; 
+ 
+    font-weight: bold; 
+ 
+    margin-bottom: 8px; 
+} 
+ 
+ 
+.form-group input, 
+.form-group select, 
+.form-group textarea { 
+ 
+    display: block; 
+ 
+    width: 100%; 
+ 
+    max-width: 100%; 
+ 
+    min-width: 0; 
+ 
+    padding: 14px 16px; 
+ 
+    background: #151515; 
+ 
+    border: 
+        1px solid #333; 
+ 
+    border-radius: 8px; 
+ 
+    color: white; 
+ 
+    font-family: inherit; 
+ 
+    font-size: 1rem; 
+ 
+    outline: none; 
+ 
+    transition: 0.3s ease; 
+} 
+ 
+ 
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus { 
+ 
+    border-color: 
+        #d4af37; 
+ 
+    box-shadow: 
+        0 0 10px 
+        rgba(212, 175, 55, 0.15); 
+} 
+ 
+ 
+.form-group textarea { 
+ 
+    resize: vertical; 
+} 
+ 
+ 
+.form-group input::placeholder, 
+.form-group textarea::placeholder { 
+ 
+    color: #666; 
+} 
+ 
+ 
+.rsvp-form .button { 
+ 
+    border: none; 
+ 
+    cursor: pointer; 
+ 
+    font-family: inherit; 
+ 
+    font-size: 1rem; 
+ 
+    margin-top: 10px; 
+} 
+ 
+ 
+/* ========================= 
+   SUCCESS MESSAGE 
+========================= */ 
+ 
+.success-message { 
+ 
+    width: 100%; 
+ 
+    text-align: center; 
+ 
+    padding: 50px 30px; 
+ 
+    background: #151515; 
+ 
+    border: 
+        1px solid #d4af37; 
+ 
+    border-radius: 15px; 
+ 
+    /* Safari border rendering fix */
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    width: 100%;
-    max-width: 100%;
-}
-
-body {
-    width: 100%;
-    max-width: 100%;
-    min-height: 100vh;
-
-    margin: 0;
-    padding: 0;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: #0b0b0b;
-
-    color: white;
-
-    line-height: 1.6;
-
-    overflow-x: hidden;
-}
-
-
-/* Prevent elements from creating
-   horizontal scrolling */
-
-img,
-input,
-select,
-textarea,
-button {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-
-    width: 100%;
-    max-width: 100%;
-
-    min-height: 100vh;
-    min-height: 100svh;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 40px 20px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.55)
-        ),
-
-        url("jbimages/background.jpeg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-}
-
-
-/* =========================
-   HERO GLOW
-========================= */
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 80vw;
-    height: 80vw;
-
-    max-width: 500px;
-    max-height: 500px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(212, 175, 55, 0.08);
-
-    filter: blur(100px);
-
-    top: 50%;
-    left: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-/* =========================
-   HERO CONTENT
-========================= */
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    max-width: 900px;
-
-    margin: 0 auto;
-}
-
-
-/* =========================
-   HERO TEXT
-========================= */
-
-.small-heading,
-.section-label {
-
-    color: #d4af37;
-
-    font-size: 0.85rem;
-
-    font-weight: bold;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
-}
-
-
-.hero h1 {
-
-    width: 100%;
-
-    font-size:
-        clamp(4rem, 10vw, 8rem);
-
-    line-height: 0.95;
-
-    margin-bottom: 25px;
-
-    letter-spacing: -4px;
-
-    font-weight: 700;
-}
-
-
-.hero h1 span {
-
-    color: #d4af37;
-
-    font-family: Georgia, serif;
-
-    font-weight: normal;
-}
-
-
-.hero-subtitle {
-
-    font-size: 1rem;
-
-    letter-spacing: 7px;
-
-    color: #d4af37;
-
-    font-weight: bold;
-
-    margin-bottom: 25px;
-}
-
-
-.hero .intro {
-
-    width: 100%;
-
-    max-width: 550px;
-
-    margin:
-        0 auto 35px;
-
-    color: #aaa;
-
-    font-size: 1.1rem;
-
-    font-style: italic;
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
-.button {
-
-    display: inline-block;
-
-    padding: 14px 30px;
-
-    background: #d4af37;
-
-    color: #111;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    border-radius: 30px;
-
-    transition: 0.3s ease;
-
-    border: none;
-
-    cursor: pointer;
-
-    font-family: inherit;
-}
-
-
-.button:hover {
-
-    background: white;
-
-    transform:
-        translateY(-3px);
-}
-
-
-/* =========================
-   DETAILS
-========================= */
-
-.details {
-
-    width: 100%;
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    padding: 100px 20px;
-
-    text-align: center;
-}
-
-
-.details h2,
-.message h2,
-.rsvp h2 {
-
-    font-size:
-        clamp(2rem, 5vw, 3.5rem);
-
-    line-height: 1.1;
-
-    margin-bottom: 20px;
-}
-
-
-.details > p:not(.section-label) {
-
-    width: 100%;
-
-    max-width: 650px;
-
-    margin:
-        0 auto 50px;
-
-    color: #bbbbbb;
-}
-
-
-/* =========================
-   EVENT CARDS
-========================= */
-
-.event-details {
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 25px;
-}
-
-
-.detail-card {
-
-    width: 100%;
-
-    min-width: 0;
-
-    background: #151515;
-
-    border:
-        1px solid #2b2b2b;
-
-    padding: 35px 20px;
-
-    border-radius: 15px;
-
-    transition: 0.3s ease;
-}
-
-
-.detail-card:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-        #d4af37;
-}
-
-
-.detail-card span {
-
-    font-size: 2.5rem;
-}
-
-
-.detail-card h3 {
-
-    color: #d4af37;
-
-    margin:
-        15px 0 5px;
-}
-
-
-.detail-card p {
-
-    color: #cccccc;
-
-    overflow-wrap:
-        break-word;
-}
-
-
-/* =========================
-   MESSAGE
-========================= */
-
-.message {
-
-    width: 100%;
-
-    background: #151515;
-
-    padding: 100px 20px;
-
-    overflow: hidden;
-}
-
-
-.message-content {
-
-    width: 100%;
-
-    max-width: 1000px;
-
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-
-.message-content p:not(.section-label) {
-
-    color: #cccccc;
-
-    margin-bottom: 20px;
-
-    overflow-wrap: break-word;
-}
-
-
-/* =========================
-   DECORATIVE MEMORY PHOTOS
-========================= */
-
-.memory-photos {
-
-    width: 100%;
-
-    max-width: 950px;
-
-    margin:
-        50px auto 55px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 25px;
-
-    position: relative;
-}
-
-
-/* PHOTO FRAME */
-
-.memory-photo {
-
-    width: 31%;
-
-    aspect-ratio: 4 / 3;
-
-    padding: 8px;
-
-    background: #d4af37;
-
-    border-radius: 4px;
-
-    overflow: hidden;
-
-    position: relative;
-
-    box-shadow:
-        0 15px 35px
-        rgba(0, 0, 0, 0.55),
-
-        0 0 18px
-        rgba(212, 175, 55, 0.15);
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-
-/* IMAGE */
-
-.memory-photo img {
-
-    display: block;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 2px;
-}
-
-
-/* PHOTO ANGLES */
-
-.photo-one {
-
-    transform:
-        rotate(-4deg);
-}
-
-
-.photo-two {
-
-    transform:
-        rotate(2deg);
-
-    z-index: 2;
-}
-
-
-.photo-three {
-
-    transform:
-        rotate(4deg);
-}
-
-
-/* PHOTO HOVER */
-
-.memory-photo:hover {
-
-    transform:
-        rotate(0deg)
-        translateY(-10px)
-        scale(1.04);
-
-    z-index: 5;
-
-    box-shadow:
-        0 20px 45px
-        rgba(0, 0, 0, 0.65),
-
-        0 0 25px
-        rgba(212, 175, 55, 0.3);
-}
-
-
-/* =========================
-   RSVP
-========================= */
-
-.rsvp {
-
-    width: 100%;
-
-    padding: 100px 20px;
-
-    text-align: center;
-}
-
-
-.rsvp-intro {
-
-    color: #bbbbbb;
-
-    margin-bottom: 40px;
-}
-
-
-.rsvp-form {
-
-    width: 100%;
-
-    max-width: 600px;
-
-    margin: 0 auto;
-
-    text-align: left;
-}
-
-
-.form-group {
-
-    width: 100%;
-
-    margin-bottom: 25px;
-}
-
-
-.form-group label {
-
-    display: block;
-
-    color: #d4af37;
-
-    font-weight: bold;
-
-    margin-bottom: 8px;
-}
-
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-
-    display: block;
-
-    width: 100%;
-
-    max-width: 100%;
-
-    min-width: 0;
-
-    padding: 14px 16px;
-
-    background: #151515;
-
-    border:
-        1px solid #333;
-
-    border-radius: 8px;
-
-    color: white;
-
-    font-family: inherit;
-
-    font-size: 1rem;
-
-    outline: none;
-
-    transition: 0.3s ease;
-}
-
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-
-    border-color:
-        #d4af37;
-
-    box-shadow:
-        0 0 10px
-        rgba(212, 175, 55, 0.15);
-}
-
-
-.form-group textarea {
-
-    resize: vertical;
-}
-
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-
-    color: #666;
-}
-
-
-.rsvp-form .button {
-
-    border: none;
-
-    cursor: pointer;
-
-    font-family: inherit;
-
-    font-size: 1rem;
-
-    margin-top: 10px;
-}
-
-
-/* =========================
-   SUCCESS MESSAGE
-========================= */
-
-.success-message {
-
-    width: 100%;
-
-    text-align: center;
-
-    padding: 50px 30px;
-
-    background: #151515;
-
-    border:
-        1px solid #d4af37;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 0 30px
-        rgba(212, 175, 55, 0.12);
-
-    animation:
-        fadeUp 0.6s ease forwards;
-}
-
-
-.success-icon {
-
-    font-size: 3.5rem;
-
-    margin-bottom: 20px;
-}
-
-
-.success-message h3 {
-
-    color: #d4af37;
-
-    font-size: 2.2rem;
-
-    margin-bottom: 15px;
-}
-
-
-.success-message p {
-
-    color: #bbbbbb;
-
-    margin-bottom: 8px;
-
-    font-size: 1rem;
-}
-
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeUp {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(30px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    width: 100%;
-
-    padding: 35px 20px;
-
-    text-align: center;
-
-    background: #050505;
-
-    color: #777;
-
-    font-size: 0.9rem;
-}
-
-
-footer p:first-child {
-
-    margin-bottom: 5px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-
-    /* GENERAL */
-
-    html,
-    body {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        overflow-x: hidden;
-    }
-
-
-    /* HERO */
-
-    .hero {
-
-        width: 100%;
-
-        min-height: 100vh;
-
-        min-height: 100svh;
-
-        padding:
-            30px 20px;
-    }
-
-
-    .hero-content {
-
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-
-    .hero h1 {
-
-        width: 100%;
-
-        font-size:
-            clamp(3rem, 15vw, 4.5rem);
-
-        letter-spacing: -2px;
-
-        line-height: 0.95;
-
-        overflow-wrap:
-            break-word;
-    }
-
-
-    .small-heading,
-    .section-label {
-
-        font-size: 0.7rem;
-
-        letter-spacing: 3px;
-    }
-
-
-    .hero-subtitle {
-
-        font-size: 0.7rem;
-
-        letter-spacing: 3px;
-
-        overflow-wrap:
-            break-word;
-    }
-
-
-    .hero .intro {
-
-        width: 100%;
-
-        font-size: 0.95rem;
-
-        max-width: 100%;
-    }
-
-
-    /* DETAILS */
-
-    .details {
-
-        width: 100%;
-
-        padding:
-            70px 20px;
-    }
-
-
-    .details h2,
-    .message h2,
-    .rsvp h2 {
-
-        width: 100%;
-
-        font-size: 2.2rem;
-
-        line-height: 1.1;
-
-        overflow-wrap:
-            break-word;
-    }
-
-
-    .details > p:not(.section-label) {
-
-        width: 100%;
-
-        font-size: 0.95rem;
-
-        margin-bottom: 35px;
-
-        overflow-wrap:
-            break-word;
-    }
-
-
-    /* EVENT CARDS */
-
-    .event-details {
-
-        width: 100%;
-
-        grid-template-columns:
-            1fr;
-
-        gap: 18px;
-    }
-
-
-    .detail-card {
-
-        width: 100%;
-
-        padding:
-            28px 18px;
-    }
-
-
-    /* MESSAGE */
-
-    .message {
-
-        width: 100%;
-
-        padding:
-            70px 20px;
-    }
-
-
-    .message-content {
-
-        width: 100%;
-    }
-
-
-    .message-content p:not(.section-label) {
-
-        font-size: 0.95rem;
-
-        overflow-wrap:
-            break-word;
-    }
-
-
-    /* =========================
-       PHOTOS - MOBILE
-    ========================= */
-
-    .memory-photos {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 28px;
-
-        margin:
-            40px auto 45px;
-    }
-
-
-    .memory-photo {
-
-        width: 85%;
-
-        max-width: 320px;
-
-        aspect-ratio: 4 / 3;
-
-        padding: 7px;
-    }
-
-
-    .photo-one {
-
-        transform:
-            rotate(-3deg);
-    }
-
-
-    .photo-two {
-
-        transform:
-            rotate(2deg);
-    }
-
-
-    .photo-three {
-
-        transform:
-            rotate(-2deg);
-    }
-
-
-    /* RSVP */
-
-    .rsvp {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        padding:
-            70px 20px;
-
-        overflow-x: hidden;
-    }
-
-
-    .rsvp-form {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        margin: 0;
-
-        padding: 0;
-    }
-
-
-    .form-group {
-
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-
-        display: block;
-
-        width: 100%;
-
-        max-width: 100%;
-
-        min-width: 0;
-
-        font-size: 16px;
-
-        padding:
-            13px 14px;
-    }
-
-
-    /* BUTTON */
-
-    .button {
-
-        max-width: 100%;
-
-        padding:
-            13px 25px;
-
-        font-size: 0.95rem;
-    }
-
-
-    /* SUCCESS MESSAGE */
-
-    .success-message {
-
-        width: 100%;
-
-        padding:
-            40px 20px;
-    }
-
-
-    .success-message h3 {
-
-        font-size: 1.8rem;
-
-        overflow-wrap:
-            break-word;
-    }
-
-
-    /* FOOTER */
-
-    footer {
-
-        width: 100%;
-
-        padding:
-            30px 20px;
-
-        font-size: 0.8rem;
-
-        overflow-wrap:
-            break-word;
-    }
-
-}
-
-
-/* =========================
-   SAFARI / IPHONE
-========================= */
-
-@supports (-webkit-touch-callout: none) {
-
-    html,
-    body {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        overflow-x: hidden;
-    }
-
-
-    .hero {
-
-        width: 100%;
-
-        min-height: 100vh;
-
-        min-height: 100svh;
-    }
-
-
-    .memory-photos {
-
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-
-    .rsvp {
-
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-
-    .rsvp-form {
-
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-
-        width: 100%;
-
-        max-width: 100%;
-
-        -webkit-appearance: none;
-
-        appearance: none;
-    }
-
+    
+    box-shadow: 
+        0 0 30px 
+        rgba(212, 175, 55, 0.12); 
+ 
+    animation: 
+        fadeUp 0.6s ease forwards; 
+
+    /* Safari border rendering fix */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+} 
+ 
+ 
+.success-icon { 
+ 
+    font-size: 3.5rem; 
+ 
+    margin-bottom: 20px; 
+} 
+ 
+ 
+.success-message h3 { 
+ 
+    color: #d4af37; 
+ 
+    font-size: 2.2rem; 
+ 
+    margin-bottom: 15px; 
+} 
+ 
+ 
+.success-message p { 
+ 
+    color: #bbbbbb; 
+ 
+    margin-bottom: 8px; 
+ 
+    font-size: 1rem; 
+} 
+ 
+ 
+/* ========================= 
+   ANIMATION 
+========================= */ 
+ 
+@keyframes fadeUp { 
+ 
+    from { 
+ 
+        opacity: 0; 
+ 
+        -webkit-transform: translate3d(0, 30px, 0);
+        transform: translate3d(0, 30px, 0); 
+    } 
+ 
+    to { 
+ 
+        opacity: 1; 
+ 
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0); 
+    } 
+} 
+ 
+ 
+/* ========================= 
+   FOOTER 
+========================= */ 
+ 
+footer { 
+ 
+    width: 100%; 
+ 
+    padding: 35px 20px; 
+ 
+    text-align: center; 
+ 
+    background: #050505; 
+ 
+    color: #777; 
+ 
+    font-size: 0.9rem; 
+} 
+ 
+ 
+footer p:first-child { 
+ 
+    margin-bottom: 5px; 
+} 
+ 
+ 
+/* ========================= 
+   MOBILE 
+========================= */ 
+ 
+@media (max-width: 700px) { 
+ 
+ 
+    /* GENERAL */ 
+ 
+    html, 
+    body { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+ 
+        overflow-x: hidden; 
+    } 
+ 
+ 
+    /* HERO */ 
+ 
+    .hero { 
+ 
+        width: 100%; 
+ 
+        min-height: 100vh; 
+ 
+        min-height: 100svh; 
+ 
+        padding: 
+            30px 20px; 
+    } 
+ 
+ 
+    .hero-content { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+    } 
+ 
+ 
+    .hero h1 { 
+ 
+        width: 100%; 
+ 
+        font-size: 
+            clamp(3rem, 15vw, 4.5rem); 
+ 
+        letter-spacing: -2px; 
+ 
+        line-height: 0.95; 
+ 
+        overflow-wrap: 
+            break-word; 
+    } 
+ 
+ 
+    .small-heading, 
+    .section-label { 
+ 
+        font-size: 0.7rem; 
+ 
+        letter-spacing: 3px; 
+    } 
+ 
+ 
+    .hero-subtitle { 
+ 
+        font-size: 0.7rem; 
+ 
+        letter-spacing: 3px; 
+ 
+        overflow-wrap: 
+            break-word; 
+    } 
+ 
+ 
+    .hero .intro { 
+ 
+        width: 100%; 
+ 
+        font-size: 0.95rem; 
+ 
+        max-width: 100%; 
+    } 
+ 
+ 
+    /* DETAILS */ 
+ 
+    .details { 
+ 
+        width: 100%; 
+ 
+        padding: 
+            70px 20px; 
+    } 
+ 
+ 
+    .details h2, 
+    .message h2, 
+    .rsvp h2 { 
+ 
+        width: 100%; 
+ 
+        font-size: 2.2rem; 
+ 
+        line-height: 1.1; 
+ 
+        overflow-wrap: 
+            break-word; 
+    } 
+ 
+ 
+    .details > p:not(.section-label) { 
+ 
+        width: 100%; 
+ 
+        font-size: 0.95rem; 
+ 
+        margin-bottom: 35px; 
+ 
+        overflow-wrap: 
+            break-word; 
+    } 
+ 
+ 
+    /* EVENT CARDS */ 
+ 
+    .event-details { 
+ 
+        width: 100%; 
+ 
+        grid-template-columns: 
+            1fr; 
+ 
+        gap: 18px; 
+    } 
+ 
+ 
+    .detail-card { 
+ 
+        width: 100%; 
+ 
+        padding: 
+            28px 18px; 
+    } 
+ 
+ 
+    /* MESSAGE */ 
+ 
+    .message { 
+ 
+        width: 100%; 
+ 
+        padding: 
+            70px 20px; 
+    } 
+ 
+ 
+    .message-content { 
+ 
+        width: 100%; 
+    } 
+ 
+ 
+    .message-content p:not(.section-label) { 
+ 
+        font-size: 0.95rem; 
+ 
+        overflow-wrap: 
+            break-word; 
+    } 
+ 
+ 
+    /* ========================= 
+       PHOTOS - MOBILE 
+    ========================= */ 
+ 
+    .memory-photos { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+ 
+        display: flex; 
+ 
+        flex-direction: column; 
+ 
+        gap: 28px; 
+ 
+        margin: 
+            40px auto 45px; 
+    } 
+ 
+ 
+    .memory-photo { 
+ 
+        width: 85%; 
+ 
+        max-width: 320px; 
+ 
+        aspect-ratio: 4 / 3; 
+ 
+        padding: 7px; 
+    } 
+ 
+ 
+    .photo-one { 
+ 
+        transform: 
+            rotate(-3deg); 
+    } 
+ 
+ 
+    .photo-two { 
+ 
+        transform: 
+            rotate(2deg); 
+    } 
+ 
+ 
+    .photo-three { 
+ 
+        transform: 
+            rotate(-2deg); 
+    } 
+ 
+ 
+    /* RSVP */ 
+ 
+    .rsvp { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+ 
+        padding: 
+            70px 20px; 
+ 
+        overflow-x: hidden; 
+    } 
+ 
+ 
+    .rsvp-form { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+ 
+        margin: 0; 
+ 
+        padding: 0; 
+    } 
+ 
+ 
+    .form-group { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+    } 
+ 
+ 
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea { 
+ 
+        display: block; 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+ 
+        min-width: 0; 
+ 
+        font-size: 16px; 
+ 
+        padding: 
+            13px 14px; 
+    } 
+ 
+ 
+    /* BUTTON */ 
+ 
+    .button { 
+ 
+        max-width: 100%; 
+ 
+        padding: 
+            13px 25px; 
+ 
+        font-size: 0.95rem; 
+    } 
+ 
+ 
+    /* SUCCESS MESSAGE */ 
+ 
+    .success-message { 
+ 
+        width: 100%; 
+ 
+        padding: 
+            40px 20px; 
+    } 
+ 
+ 
+    .success-message h3 { 
+ 
+        font-size: 1.8rem; 
+ 
+        overflow-wrap: 
+            break-word; 
+    } 
+ 
+ 
+    /* FOOTER */ 
+ 
+    footer { 
+ 
+        width: 100%; 
+ 
+        padding: 
+            30px 20px; 
+ 
+        font-size: 0.8rem; 
+ 
+        overflow-wrap: 
+            break-word; 
+    } 
+ 
+} 
+ 
+ 
+/* ========================= 
+   SAFARI / IPHONE 
+========================= */ 
+ 
+@supports (-webkit-touch-callout: none) { 
+ 
+    html, 
+    body { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+ 
+        overflow-x: hidden; 
+    } 
+ 
+ 
+    .hero { 
+ 
+        width: 100%; 
+ 
+        min-height: 100vh; 
+ 
+        min-height: 100svh; 
+    } 
+ 
+ 
+    .memory-photos { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+    } 
+ 
+ 
+    .rsvp { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+    } 
+ 
+ 
+    .rsvp-form { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+    } 
+ 
+ 
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea { 
+ 
+        width: 100%; 
+ 
+        max-width: 100%; 
+ 
+        -webkit-appearance: none; 
+ 
+        appearance: none; 
+    } 
+ 
 }
